@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color-rgb: 81, 55, 232;
+  --primary-color: rgb(var(--primary-color-rgb));
+  --primary-color--hover: rgb(139, 127, 248);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  color: white;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  padding: 1.5rem;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: var(--primary-color--hover);
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.sidebar {
+  border-right: 1px solid rgb(231, 227, 227);
+  padding: 0.5rem;
+  overflow: auto;
+  width: 400px;
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.note {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 2px;
+  border-radius: 5px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.preview {
+  color: rgb(197, 196, 196);
+}
+
+.timestamp {
+  text-align: right;
+  color: rgb(197, 196, 196);
+  font-size: 0.6rem;
+  font-style: italic;
+}
+
+.note:hover,
+.selected-note {
+  background-color: rgba(var(--primary-color-rgb), 0.1);
+  cursor: pointer;
+}
+
+.new-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.new-note .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.save,
+.delete {
+  width: unset;
+  padding: 1rem;
+}
+
+.content {
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.headline {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+#header,
+#memory {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+#header::placeholder,
+#memory::placeholder {
+  color: rgb(222, 220, 220);
+}
+
+#header {
+  font-size: 2.5rem;
+  font-weight: bold;
+  border-bottom: 1px solid rgb(249, 246, 246);
+}
+
+#memory {
+  border-radius: 0.5rem;
+  resize: none;
+  height: 85vh;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
